@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Week</h1>
+    
+    <hr>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="monday">
+        <input type="submit" value="tuesday">
+        <input type="submit" value="wednesday">
+        <input type="submit" value="thursday">
+        <input type="submit" value="friday">
+        <input type="submit" value="saturday">
+        <input type="submit" value="sunday">
+    </form>
+    <hr>
+    <h2 style="text-align: center;">{{ color }}</h2>
+    <hr>
+
+    <script>
+        const form_day = document.getElementById('form_day')
+        form_day.addEventListener('click', function(){
+    const data = {"week": value}
+    console.log(value)
+    response =  fetch('http://127.0.0.1:8000/api/music/download/',
+        {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(data)
+        }
+    )
+        })
+    
+    </script>
+</body>
+</html>
