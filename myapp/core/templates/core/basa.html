@@ -7,38 +7,23 @@
             {% load bootstrap5 %}
             {% bootstrap_css %}
             {% bootstrap_javascript %}
-    
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
     
 </head>
 <body>
-    <style>
-        body{
-            background: url(static/img/fon.jpg);
-        }
-
-    </style>
+    
     
     <nav class="navbar bg-dark" data-bs-theme="dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Домашка</a>
-            <button type="button" id="text-music" class="btn btn-info">Текст песни</button>
-            <button type="button" id="car" class="btn btn-info">Автомобили</button>
-            <button type="button" id="week" class="btn btn-info">Дни недели</button>
-            <button type="button" id="headphones" class="btn btn-info">Наушники</button>
+            <a class="navbar-brand" href="/">Домашка</a>
+            <a href="/music/" class="btn btn-info">Текст песни</button>
+            <a href="/car/" class="btn btn-info">Автомобили</button>
+            <a href="/week/" class="btn btn-info">Дни недели</a>
+            <a href="/headphones/" class="btn btn-info">Наушники</a>
         </div>
         
     </nav>
-    <script>
-        const btn_text_music = document.getElementById('text-music')
-        const btn_car = document.getElementById('car')
-        const btn_week = document.getElementById('week')
-        const btn_headphones = document.getElementById('headphones')
-        btn_text_music.addEventListener('click', function(){
-            response =  fetch('http://127.0.0.1:8000/music/',
-        
-    )
-        })
-    </script>
+    
     {%block body%}
 
     {%endblock%}

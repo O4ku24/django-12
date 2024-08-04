@@ -1,5 +1,4 @@
 
-from typing import Dict
 from googletrans import Translator
 
 def open_text():
@@ -40,17 +39,18 @@ def trans(to_lang):
     
 def day_week(day)->str:
     week = {
-        'mondey':'green',
-        'tuesday':'color',
-        'wednesday':'color',
-        'thursday':'color',
-        'friday':'color',
-        'saturday':'color',
-        'sunday':'color'
+        "mondey":"green",
+        'tuesday':'blue',
+        'wednesday':'black',
+        'thursday':'yellow',
+        'friday':'red',
+        'saturday':'pink',
+        'sunday':'white'
     }
+    color = week[day]
     
     
-    data = week[day]
-    return data
+    
+    return color
 
 

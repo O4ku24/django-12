@@ -1,5 +1,27 @@
 {% extends "core/basa.html" %}
 {%block body%}
-    <h1 style="text-align: center;">Главная страница</h1>
+<style>
+    .pdf {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+    }
 
+    .pdf,
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    
+</style>
+
+    <h1 style="text-align: center; color: aqua;">Главная страница</h1>
+    
+    <object class="pdf" 
+            data="/static/img/Python_4.pdf"
+            width="800"
+            height="500">
+    </object>
 {%endblock%} 

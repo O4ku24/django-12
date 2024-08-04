@@ -16,19 +16,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import home, music, musicDe, musicEn, musicFr, carhome, car_toyota, car_honda, car_renault, week
+from core.views import home, headphones, music, musicDe, musicEn, musicFr, carhome, car_toyota, car_honda, car_renault, week
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
+
     path('music/', music, name='music'),
     path('music/de/', musicDe, name='musicDe'),
     path('music/en/', musicEn, name='musicEn'),
     path('music/fr/', musicFr, name='musicFr'),
+
     path('car/', carhome, name='carhome'),
     path('car/toyota', car_toyota, name='car_toyota'),
     path('car/honda', car_honda, name='car_honda'),
     path('car/renault', car_renault, name='car_renault'),
+    
     path('week/', week, name='week'),
+
+    path('headphones/', headphones, name='headphones')
 ]
 

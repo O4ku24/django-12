@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from core.utilits import trans, open_text, day_week
+from django.views.decorators.csrf import csrf_exempt
 
 
 def home(request):
@@ -8,8 +9,7 @@ def home(request):
 def music(request):
     if request.method == 'GET':
         return render(request=request, template_name='core/music.html', context=open_text())
-    if request.methot == 'POST':
-        print(request)
+    
     
 def musicEn(request):
     if request.method == 'GET':
@@ -44,10 +44,19 @@ def car_renault(request):
         car = 'Renault'
         data = {'data':car}
         return render(request=request, template_name='core/car.html', context=data)
-    
+@csrf_exempt
 def week(request):
     if request.method == 'GET':
         return render(request=request, template_name='core/week.html')
     if request.method == 'POST':
-        color = day_week(request)
-        return render(request=request, template_name='core/week.html', context=color)
+        day = request.POST.get("Week")
+        print(f'DAY - {day}')
+        color = day_week(day)
+        print(f'color - {color}')
+        data = {'color':color}
+        
+        return render(request=request, template_name='core/week.html', context=data)
+    
+def headphones(request):
+    if request.method == 'GET':
+        return render(request=request, template_name='core/headphones.html')
