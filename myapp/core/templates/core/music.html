@@ -1,9 +1,19 @@
 {% extends "core/basa.html" %}
 {%block body%}
+<hr>
+<nav class="navbar bg-dark" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a href="/music/" class="btn btn-info">Original</a>
+        <a href="/music/en" class="btn btn-info">English</a>
+        <a href="/music/de" class="btn btn-info">Deutsche</a>
+        <a href="/music/fr" class="btn btn-info">French</a>
+    </div>
+    
+</nav>
     <h1 style="text-align: center; color: aqua;">like Music</h1>
     <hr>
 
     <p style="text-align: center; color: aqua;">{{ data }}</p>
     
     <hr>
-{%endblock%}
+{%endblock%} 

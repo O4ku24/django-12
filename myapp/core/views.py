@@ -50,10 +50,14 @@ def week(request):
         return render(request=request, template_name='core/week.html')
     if request.method == 'POST':
         day = request.POST.get("Week")
-        print(f'DAY - {day}')
-        color = day_week(day)
-        print(f'color - {color}')
-        data = {'color':color}
+        if day == None:
+            print('day - None')
+            return render(request=request, template_name='core/week.html')
+        else:
+            print(f'DAY - {day}')
+            color = day_week(day)
+            print(f'color - {color}')
+            data = {'color':color}
         
         return render(request=request, template_name='core/week.html', context=data)
     
